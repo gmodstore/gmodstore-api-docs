@@ -358,8 +358,8 @@ If you wish to use a former simply set the <code>Authorization</code> header to 
 <p>For authorization Gmodstore uses a variety of permissions which you can assign to your api keys individually.
 An up-to-date list of these permissions is available on your Gmodstore dasboard.</p>
 <h1 id='rate-limits'>Rate Limits</h1>
-<p>Every request you make to the Gmodstore API will count against your rate limit which, as of the time of writing, is 1 request / second.
-An up-to-date value will always provided in the <code>X-RateLimit-Limit</code> header.
+<p>Every request you make to the Gmodstore API will count against your rate limit which, as of the time of writing, is 60 requests / minute.<br>
+An up-to-date value will always provided in the <code>X-RateLimit-Limit</code> header.<br>
 The number of requests you have remaining before you must wait is provided in the <code>x-RateLimit-Remaining</code> header.</p>
 <h1 id='error-codes'>Error Codes</h1>
 <p>The Gmodstore API uses the following error codes:</p>
