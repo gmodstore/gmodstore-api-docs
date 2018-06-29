@@ -250,13 +250,13 @@
                     <a href="#resource-types-addon-media" class="toc-h2 toc-link" data-title="addon-media">Addon Media</a>
                   </li>
                   <li>
+                    <a href="#resource-types-addon-purchase" class="toc-h2 toc-link" data-title="addon-purchase">Addon Purchase</a>
+                  </li>
+                  <li>
                     <a href="#resource-types-addon-review" class="toc-h2 toc-link" data-title="addon-review">Addon Review</a>
                   </li>
                   <li>
                     <a href="#resource-types-addon-version" class="toc-h2 toc-link" data-title="addon-version">Addon Version</a>
-                  </li>
-                  <li>
-                    <a href="#resource-types-addon-purchase" class="toc-h2 toc-link" data-title="addon-purchase">Addon Purchase</a>
                   </li>
                   <li>
                     <a href="#resource-types-permission-group" class="toc-h2 toc-link" data-title="permission-group">Permission Group</a>
@@ -412,7 +412,10 @@ The number of requests you have remaining before you must wait is provided in th
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"array"</span><span class="p">,</span><span class="w"> </span><span class="s2">"object"</span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"data"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Some resources have an &quot;Relations&quot; section, these relations can be retrieved by using the <code>with</code> query parameter;
@@ -427,11 +430,11 @@ The relations will be appended to the resource with a key matching matching thei
 <p>JSON Schema:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>A generic collection of resources, most resources use this collection type but some may have special ones.
@@ -478,7 +481,11 @@ In this type of collection <em>all</em> resource properties are maintained and t
         </span><span class="s2">"purchase"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"original"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"purchase"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
@@ -492,7 +499,12 @@ In this type of collection <em>all</em> resource properties are maintained and t
         </span><span class="s2">"listing_small"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"bigspot"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"listing"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"listing_small"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -502,7 +514,19 @@ In this type of collection <em>all</em> resource properties are maintained and t
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-time"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"short_description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requirements"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"images"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The <code>Addon</code> resource is used to represent an addon.</p>
@@ -557,7 +581,16 @@ In this type of collection <em>all</em> resource properties are maintained and t
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-time"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"percent"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"max_uses"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"expires_at"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The <code>Addon Coupon</code> resource is used to represent a coupon for an addon</p>
@@ -592,7 +625,12 @@ In this type of collection <em>all</em> resource properties are maintained and t
     </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The <code>Addon Media</code> resource is used to represent a media object belonging to an addon.</p>
@@ -608,6 +646,58 @@ In this type of collection <em>all</em> resource properties are maintained and t
 <td>addon</td>
 <td><a href="#resource-types-addon">Addon</a></td>
 <td>The addon the media is for</td>
+</tr>
+</tbody></table>
+<h2 id='resource-types-addon-purchase'>Addon Purchase</h2>
+<blockquote>
+<p>JSON Schema:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"revoked"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-time"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-time"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"revoked"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The <code>Addon Purchase</code> resource is used to represent <em>ownership</em> of an addon.</p>
+<h3 id='resource-types-addon-purchase-relations'>Relations</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>addon</td>
+<td><a href="#resource-types-addon">Addon</a></td>
+<td>The addon the &quot;purchase&quot; is of</td>
+</tr>
+<tr>
+<td>transaction</td>
+<td><a href="#resource-types-transaction">Transaction</a></td>
+<td>The transaction (null if the &quot;purchase&quot; was granted)</td>
+</tr>
+<tr>
+<td>user</td>
+<td><a href="#resource-types-team-user">User</a></td>
+<td>The user that the &quot;purchase&quot; belongs to</td>
 </tr>
 </tbody></table>
 <h2 id='resource-types-addon-review'>Addon Review</h2>
@@ -633,7 +723,14 @@ In this type of collection <em>all</em> resource properties are maintained and t
     </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"version"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"body"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The <code>Addon Review</code> resource is used to represent a review of an addon.</p>
@@ -687,7 +784,16 @@ In this type of collection <em>all</em> resource properties are maintained and t
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-time"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"changelog"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_hash"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_size"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The <code>Addon Version</code> resource is used to represent a specific version of an addon.</p>
@@ -705,53 +811,6 @@ In this type of collection <em>all</em> resource properties are maintained and t
 <td>The addon the version is of</td>
 </tr>
 </tbody></table>
-<h2 id='resource-types-addon-purchase'>Addon Purchase</h2>
-<blockquote>
-<p>JSON Schema:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"revoked"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-time"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-time"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>The <code>Addon Purchase</code> resource is used to represent <em>ownership</em> of an addon.</p>
-<h3 id='resource-types-addon-purchase-relations'>Relations</h3>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>addon</td>
-<td><a href="#resource-types-addon">Addon</a></td>
-<td>The addon the &quot;purchase&quot; is of</td>
-</tr>
-<tr>
-<td>transaction</td>
-<td><a href="#resource-types-transaction">Transaction</a></td>
-<td>The transaction (null if the &quot;purchase&quot; was granted)</td>
-</tr>
-<tr>
-<td>user</td>
-<td><a href="#resource-types-team-user">User</a></td>
-<td>The user that the &quot;purchase&quot; belongs to</td>
-</tr>
-</tbody></table>
 <h2 id='resource-types-permission-group'>Permission Group</h2>
 <blockquote>
 <p>JSON Schema:</p>
@@ -766,7 +825,11 @@ In this type of collection <em>all</em> resource properties are maintained and t
     </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The <code>Permission Group</code> resource is used to represent a permission group / rank / role.</p>
@@ -777,20 +840,28 @@ In this type of collection <em>all</em> resource properties are maintained and t
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-time"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-time"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-time"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-time"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The <code>Team</code> resource is used to represent a team.</p>
@@ -815,12 +886,18 @@ In this type of collection <em>all</em> resource properties are maintained and t
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"team_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"team_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"primary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"primary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"team_id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"primary"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The <code>Team User</code> resource is used to represent a member of a team, it acts as a link between a real <a href="#resource-types-user">User</a> and a team.</p>
@@ -845,15 +922,22 @@ In this type of collection <em>all</em> resource properties are maintained and t
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"refunded"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"refunded"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"refunded"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The <code>Transaction</code> resource is used to represent a transaction.</p>
@@ -878,19 +962,27 @@ In this type of collection <em>all</em> resource properties are maintained and t
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uri"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"country_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uri"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"country_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"avatar"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country_code"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The <code>User</code> resource is used to represent a user on the site.</p>
