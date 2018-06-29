@@ -312,7 +312,7 @@ addon | [Addon](#resource-types-addon) | The addon the version is of
 }
 ```
 
-The `AddonPurchase` resource is used to represent *ownership* of an addon.
+The `Addon Purchase` resource is used to represent *ownership* of an addon.
 
 ### Relations
 Name | Type | Description
@@ -343,7 +343,7 @@ user        | [User](#resource-types-team-user)          | The user that the "pu
 }
 ```
 
-The `PermissionGroup` resource is used to represent a permission group / rank / role.
+The `Permission Group` resource is used to represent a permission group / rank / role.
 
 
 
