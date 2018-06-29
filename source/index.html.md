@@ -17,7 +17,18 @@ includes:
 
   - error_codes
   
-  - resource_types
+  - resource_types/main
+  - resource_types/addon
+  - resource_types/addon_coupon
+  - resource_types/addon_media
+  - resource_types/addon_purchase
+  - resource_types/addon_review
+  - resource_types/addon_version
+  - resource_types/permission_group
+  - resource_types/team
+  - resource_types/team_user
+  - resource_types/transaction
+  - resource_types/user
   
   - teams/main
   - teams/users
