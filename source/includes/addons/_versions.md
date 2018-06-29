@@ -3,7 +3,7 @@
 ### Index
 
 ```shell
-curl "https://gmodstore.com/api/v2/addons/565/versions" \
+curl "https://api.gmodstore.com/addons/565/versions" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -19,7 +19,7 @@ $client->getAddon(565)->getVersions();
 
 Fetch all the versions of an addon.
 
-`GET https://gmodstore.com/api/v2/addons/<id>/versions`
+`GET https://api.gmodstore.com/addons/<id>/versions`
 
 **Route parameters:**
 
@@ -57,7 +57,7 @@ $client->getAddon(565)->createVersion([
 
 Create a new version for an addon.
 
-`POST https://gmodstore.com/api/v2/addons/<id>/versions`
+`POST https://api.gmodstore.com/addons/<id>/versions`
 
 **Route parameters:**
 
@@ -80,7 +80,7 @@ Response resource: [Addon Version](#resource-types-addon-version)
 ### Show
 
 ```shell
-curl "https://gmodstore.com/api/v2/addons/565/versions/6" \
+curl "https://api.gmodstore.com/addons/565/versions/6" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -96,7 +96,7 @@ $client->getAddon(565)->getVersion(6);
 
 Fetch a specific version of an addon.
 
-`GET https://gmodstore.com/api/v2/addons/<addon_id>/versions/<version_id>`
+`GET https://api.gmodstore.com/addons/<addon_id>/versions/<version_id>`
 
 **Route parameters:**
 
@@ -136,7 +136,7 @@ $client->getAddon(565)->getVersion(6)->update([
 
 Update a version of an addon.
 
-`POST https://gmodstore.com/api/v2/addons/<addon_idid>/versions/<version_id>`
+`POST https://api.gmodstore.com/addons/<addon_idid>/versions/<version_id>`
 
 **Route parameters:**
 

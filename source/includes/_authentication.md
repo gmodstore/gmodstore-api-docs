@@ -4,7 +4,7 @@
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "https://gmodstore.com/api/v2/<endpoint>" \
+curl "https://api.gmodstore.com/<endpoint>" \
   -H "Authorization: Bearer secret"
 ```
 

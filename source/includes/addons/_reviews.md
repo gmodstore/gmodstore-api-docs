@@ -3,7 +3,7 @@
 ### Index
 
 ```shell
-curl "https://gmodstore.com/api/v2/addons/565/reviews" \
+curl "https://api.gmodstore.com/addons/565/reviews" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -34,7 +34,7 @@ Response resource: [Collection](#resource-types-collection)<[Addon Review](#reso
 ### Show
 
 ```shell
-curl "https://gmodstore.com/api/v2/addons/565/reviews/223" \
+curl "https://api.gmodstore.com/addons/565/reviews/223" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -50,7 +50,7 @@ $client->getAddon(565)->getReview(223);
 
 Fetch a review of an addon.
 
-`GET https://gmodstore.com/api/v2/addons/<addon_id>/reviews/<review_id>`
+`GET https://api.gmodstore.com/addons/<addon_id>/reviews/<review_id>`
 
 **Route parameters:**
 

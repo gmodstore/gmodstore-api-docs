@@ -3,7 +3,7 @@
 ### Index
 
 ```shell
-curl "https://gmodstore.com/api/v2/addons/565/purchases" \
+curl "https://api.gmodstore.com/addons/565/purchases" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -34,7 +34,7 @@ Response resource: [Collection](#resource-types-collection)<[Addon Purchase](#re
 ### Store
 
 ```shell
-curl -X POST "https://gmodstore.com/api/v2/addons/565/purchases" \
+curl -X POST "https://api.gmodstore.com/addons/565/purchases" \
   -H "Authorization: Bearer secret" \
   -d "user_id=76561198127820866"
 ```
@@ -73,7 +73,7 @@ Response resource: [Addon Purchase](#resource-types-addon-purchase)
 ### Show
 
 ```shell
-curl "https://gmodstore.com/api/v2/addons/565/purchases/76561198091472117" \
+curl "https://api.gmodstore.com/addons/565/purchases/76561198091472117" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -105,7 +105,7 @@ Response resource: [Addon Purchase](#resource-types-addon-purchase)
 ### Update
 
 ```shell
-curl -X POST "https://gmodstore.com/api/v2/addons/565/purchases/76561198091472117" \
+curl -X POST "https://api.gmodstore.com/addons/565/purchases/76561198091472117" \
   -H "Authorization: Bearer secret" \
   -d "revoked=1"
 ```

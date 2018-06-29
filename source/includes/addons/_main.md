@@ -5,7 +5,7 @@
 ### Index
 
 ```shell
-curl "https://gmodstore.com/api/v2/addons" \
+curl "https://api.gmodstore.com/addons" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -21,7 +21,7 @@ $client->getAddons();
 
 Fetch all the addons that you have access to.
 
-`GET https://gmodstore.com/api/v2/addons`
+`GET https://api.gmodstore.com/addons`
 
 Response code: `200`<br>
 Response resource: [Collection](#resource-types-collection)<[Addon](#resource-types-addon)>
@@ -30,7 +30,7 @@ Response resource: [Collection](#resource-types-collection)<[Addon](#resource-ty
 ### Show
 
 ```shell
-curl "https://gmodstore.com/api/v2/addons/565" \
+curl "https://api.gmodstore.com/addons/565" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -46,7 +46,7 @@ $client->getAddon(565);
 
 Fetch a single addon.
 
-`GET https://gmodstore.com/api/v2/addons/<id>`
+`GET https://api.gmodstore.com/addons/<id>`
 
 **Route parameters:**
 
