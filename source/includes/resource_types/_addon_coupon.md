@@ -8,16 +8,22 @@
   "type": "object",
   "properties": {
     "id": {
-      "type": "integer"
+      "type": "integer",
+      "minimum": 1
     },
     "code": {
       "type": "string"
     },
     "percent": {
-      "type": "number"
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "exclusiveMinimum": true,
+      "exclusiveMaximum": true
     },
     "max_uses": {
-      "type": "integer"
+      "type": "integer",
+      "minimum": 0
     },
     "expires_at": {
       "type": "string",

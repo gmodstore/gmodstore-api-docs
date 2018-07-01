@@ -8,7 +8,8 @@
   "type": "object",
   "properties": {
     "team_id": {
-      "type": "integer"
+      "type": "integer",
+      "minimum": 1
     },
     "primary": {
       "type": "boolean"

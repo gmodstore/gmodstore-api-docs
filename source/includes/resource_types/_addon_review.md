@@ -8,7 +8,8 @@
   "type": "object",
   "properties": {
     "id": {
-      "type": "integer"
+      "type": "integer",
+      "minimum": 1
     },
     "title": {
       "type": "string"
@@ -20,7 +21,10 @@
       "type": "string"
     },
     "rating": {
-      "type": "number"
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5,
+      "exclusiveMinimum": true
     }
   },
   "required": [

@@ -8,7 +8,8 @@
   "type": "object",
   "properties": {
     "id": {
-      "type": "integer"
+      "type": "integer",
+      "minimum": 1
     },
     "name": {
       "type": "string"

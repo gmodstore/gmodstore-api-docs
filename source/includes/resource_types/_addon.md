@@ -8,7 +8,8 @@
   "type": "object",
   "properties": {
     "id": {
-      "type": "integer"
+      "type": "integer",
+      "minimum": 1
     },
     "active": {
       "type": "boolean"
@@ -32,10 +33,14 @@
       "type": "object",
       "properties": {
         "original": {
-          "type": "number"
+          "type": "number",
+          "minimum": 0,
+          "exclusiveMinimum": true
         },
         "purchase": {
-          "type": "number"
+          "type": "number",
+          "minimum": "original",
+          "exclusiveMinimum": true
         }
       },
       "required": [
@@ -47,13 +52,16 @@
       "type": "object",
       "properties": {
         "bigspot": {
-          "type": "string"
+          "type": "string",
+          "format": "uri"
         },
         "listing": {
-          "type": "string"
+          "type": "string",
+          "format": "uri"
         },
         "listing_small": {
-          "type": "string"
+          "type": "string",
+          "format": "uri"
         }
       },
       "required": [

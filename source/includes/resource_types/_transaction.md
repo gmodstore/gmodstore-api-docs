@@ -8,10 +8,13 @@
   "type": "object",
   "properties": {
     "id": {
-      "type": "integer"
+      "type": "integer",
+      "minimum": 1
     },
     "price": {
-      "type": "number"
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMinimum": true
     },
     "refunded": {
       "type": "boolean"

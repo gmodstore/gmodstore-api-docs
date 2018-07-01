@@ -27,6 +27,8 @@
 
 The `Addon Media` resource is used to represent a media object belonging to an addon.
 
+**Note: The "ID" of this resource is a unique hash**
+
 ### Relations
 Name | Type | Description
 ---- | ---- | -----------

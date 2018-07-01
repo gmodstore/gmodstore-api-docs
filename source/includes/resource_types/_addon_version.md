@@ -8,7 +8,8 @@
   "type": "object",
   "properties": {
     "id": {
-      "type": "integer"
+      "type": "integer",
+      "minimum": 1
     },
     "name": {
       "type": "string"
@@ -20,7 +21,8 @@
       "type": "string"
     },
     "file_size": {
-      "type": "integer"
+      "type": "integer",
+      "minimum": 0
     },
     "created_at": {
       "type": "string",
