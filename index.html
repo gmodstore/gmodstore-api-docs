@@ -1271,7 +1271,7 @@ $client-&gt;getAddon(565)-&gt;getCoupons();
 
 <p>Response code: <code>200</code><br>
 Response resource: <a href="#resource-types-collection">Collection</a>&lt;<a href="#resource-types-addon-coupon">Addon Coupon</a>&gt;</p>
-<h3 id='addons-coupons-store'>Store</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://gmodstore.com/addons/565/coupons"</span> <span class="se">\</span>
+<h3 id='addons-coupons-store'>Store</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.gmodstore.com/addons/565/coupons"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer secret"</span> <span class="se">\</span>
   -d <span class="s2">"percent=25&amp;code=25OFF&amp;max_uses=10&amp;expires_at=25.12.2025"</span>
 </code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
@@ -1381,7 +1381,7 @@ $client-&gt;getAddon(565)-&gt;getCoupon(967);
 
 <p>Response code: <code>200</code><br>
 Response resource: <a href="#resource-types-addon-coupon">Addon Coupon</a></p>
-<h3 id='addons-coupons-update'>Update</h3><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"https://gmodstore.com/addons/565/coupons/967"</span> <span class="se">\</span>
+<h3 id='addons-coupons-update'>Update</h3><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"https://api.gmodstore.com/addons/565/coupons/967"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer secret"</span> <span class="se">\</span>
   -d <span class="s2">"percent=75&amp;code=75OFF&amp;max_uses=10&amp;expires_at=25.12.2025"</span>
 </code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
@@ -1507,7 +1507,7 @@ $client-&gt;getAddon(565)-&gt;getPurchases();
 
 <p>Fetch all purchases of an addon.</p>
 
-<p><code>GET https://gmodstore.com/addons/&lt;id&gt;/purchases</code></p>
+<p><code>GET https://api.gmodstore.com/addons/&lt;id&gt;/purchases</code></p>
 
 <p><strong>Route parameters:</strong></p>
 
@@ -1542,7 +1542,7 @@ $client-&gt;getAddon(565)-&gt;addPurchase(76561198127820866);
 
 <p>Create a purchase for an addon.</p>
 
-<p><code>POST https://gmodstore.com/addons/&lt;id&gt;/purchases</code></p>
+<p><code>POST https://api.gmodstore.com/addons/&lt;id&gt;/purchases</code></p>
 
 <p><strong>Route parameters:</strong></p>
 
@@ -1592,7 +1592,7 @@ $client-&gt;getAddon(565)-&gt;getPurchase(76561198091472117);
 
 <p>Get a purchase of an addon (by user).</p>
 
-<p><code>GET https://gmodstore.com/addons/&lt;addon_id&gt;/purchases/&lt;user_id&gt;</code></p>
+<p><code>GET https://api.gmodstore.com/addons/&lt;addon_id&gt;/purchases/&lt;user_id&gt;</code></p>
 
 <p><strong>Route parameters:</strong></p>
 
@@ -1634,7 +1634,7 @@ $client-&gt;getAddon(565)-&gt;getPurchase(76561198127820866)-&gt;update([
 
 <p>Create a purchase for an addon.</p>
 
-<p><code>POST https://gmodstore.com/addons/&lt;id&gt;/purchases</code></p>
+<p><code>POST https://api.gmodstore.com/addons/&lt;id&gt;/purchases</code></p>
 
 <p><strong>Route parameters:</strong></p>
 
@@ -1684,7 +1684,7 @@ $client-&gt;getAddon(565)-&gt;getReviews();
 
 <p>Fetch all the reviews of an addon.</p>
 
-<p><code>GET https://gmodstore.com/addons/&lt;id&gt;/reviews</code></p>
+<p><code>GET https://api.gmodstore.com/addons/&lt;id&gt;/reviews</code></p>
 
 <p><strong>Route parameters:</strong></p>
 
@@ -1777,7 +1777,7 @@ $client-&gt;getAddon(565)-&gt;getVersions();
 
 <p>Response code: <code>200</code><br>
 Response resource: <a href="#resource-types-collection">Collection</a>&lt;<a href="#resource-types-addon-coupon">Addon Coupon</a>&gt;</p>
-<h3 id='addons-versions-store'>Store</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://gmodstore.com/addons/565/versions"</span> <span class="se">\</span>
+<h3 id='addons-versions-store'>Store</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.gmodstore.com/addons/565/versions"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer secret"</span> <span class="se">\</span>
   -F <span class="s2">"name=Prometheus 2"</span> <span class="se">\</span>
   -F <span class="s2">"changelog=Made it a **lot** better ;)"</span> <span class="se">\</span>
@@ -1885,7 +1885,7 @@ $client-&gt;getAddon(565)-&gt;getVersion(6);
 Response resource: <a href="#resource-types-addon-version">Addon Version</a></p>
 <h3 id='addons-versions-download'>Download</h3>
 <p>Coming soon™</p>
-<h3 id='addons-versions-update'>Update</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://gmodstore.com/addons/565/versions/6"</span> <span class="se">\</span>
+<h3 id='addons-versions-update'>Update</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.gmodstore.com/addons/565/versions/6"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer secret"</span> <span class="se">\</span>
   -d <span class="s2">"name=Prometheus 1.8&amp;changelog=April fools xD"</span>
 </code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
