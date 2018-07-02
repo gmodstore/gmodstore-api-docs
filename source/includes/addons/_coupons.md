@@ -34,7 +34,7 @@ Response resource: [Collection](#resource-types-collection)<[Addon Coupon](#reso
 ### Store
 
 ```shell
-curl -X POST "https://gmodstore.com/addons/565/coupons" \
+curl -X POST "https://api.gmodstore.com/addons/565/coupons" \
   -H "Authorization: Bearer secret" \
   -d "percent=25&code=25OFF&max_uses=10&expires_at=25.12.2025"
 ```
@@ -112,7 +112,7 @@ Response resource: [Addon Coupon](#resource-types-addon-coupon)
 ### Update
 
 ```shell
-curl -X PUT "https://gmodstore.com/addons/565/coupons/967" \
+curl -X PUT "https://api.gmodstore.com/addons/565/coupons/967" \
   -H "Authorization: Bearer secret" \
   -d "percent=75&code=75OFF&max_uses=10&expires_at=25.12.2025"
 ```

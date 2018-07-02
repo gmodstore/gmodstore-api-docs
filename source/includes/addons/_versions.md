@@ -34,7 +34,7 @@ Response resource: [Collection](#resource-types-collection)<[Addon Coupon](#reso
 ### Store
 
 ```shell
-curl -X POST "https://gmodstore.com/addons/565/versions" \
+curl -X POST "https://api.gmodstore.com/addons/565/versions" \
   -H "Authorization: Bearer secret" \
   -F "name=Prometheus 2" \
   -F "changelog=Made it a **lot** better ;)" \
@@ -116,7 +116,7 @@ Coming soon™
 ### Update
 
 ```shell
-curl -X POST "https://gmodstore.com/addons/565/versions/6" \
+curl -X POST "https://api.gmodstore.com/addons/565/versions/6" \
   -H "Authorization: Bearer secret" \
   -d "name=Prometheus 1.8&changelog=April fools xD"
 ```

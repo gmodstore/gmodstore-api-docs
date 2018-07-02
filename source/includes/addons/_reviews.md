@@ -19,7 +19,7 @@ $client->getAddon(565)->getReviews();
 
 Fetch all the reviews of an addon.
 
-`GET https://gmodstore.com/addons/<id>/reviews`
+`GET https://api.gmodstore.com/addons/<id>/reviews`
 
 **Route parameters:**
 

@@ -19,7 +19,7 @@ $client->getAddon(565)->getPurchases();
 
 Fetch all purchases of an addon.
 
-`GET https://gmodstore.com/addons/<id>/purchases`
+`GET https://api.gmodstore.com/addons/<id>/purchases`
 
 **Route parameters:**
 
@@ -51,7 +51,7 @@ $client->getAddon(565)->addPurchase(76561198127820866);
 
 Create a purchase for an addon.
 
-`POST https://gmodstore.com/addons/<id>/purchases`
+`POST https://api.gmodstore.com/addons/<id>/purchases`
 
 **Route parameters:**
 
@@ -89,7 +89,7 @@ $client->getAddon(565)->getPurchase(76561198091472117);
 
 Get a purchase of an addon (by user).
 
-`GET https://gmodstore.com/addons/<addon_id>/purchases/<user_id>`
+`GET https://api.gmodstore.com/addons/<addon_id>/purchases/<user_id>`
 
 **Route parameters:**
 
@@ -124,7 +124,7 @@ $client->getAddon(565)->getPurchase(76561198127820866)->update([
 
 Create a purchase for an addon.
 
-`POST https://gmodstore.com/addons/<id>/purchases`
+`POST https://api.gmodstore.com/addons/<id>/purchases`
 
 **Route parameters:**
 
