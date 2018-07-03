@@ -20,6 +20,7 @@ includes:
   - resource_types/main
   - resource_types/addon
   - resource_types/addon_coupon
+  - resource_types/addon_download
   - resource_types/addon_media
   - resource_types/addon_purchase
   - resource_types/addon_review
@@ -30,18 +31,18 @@ includes:
   - resource_types/transaction
   - resource_types/user
   
+  - addons/main
+  - addons/coupons
+  - addons/purchases
+  - addons/reviews
+  - addons/versions
+    
   - teams/main
   - teams/users
   
   - users/main
   - users/purchases
   - users/teams
-  
-  - addons/main
-  - addons/coupons
-  - addons/purchases
-  - addons/reviews
-  - addons/versions
 
 search: true
 ---

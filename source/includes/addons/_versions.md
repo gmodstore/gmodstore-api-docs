@@ -110,7 +110,35 @@ Response resource: [Addon Version](#resource-types-addon-version)
 
 
 ### Download
-Coming soon™
+
+```shell
+curl "https://api.gmodstore.com/addons/565/versions/6/download" \
+  -H "Authorization: Bearer secret"
+```
+
+```php
+use GmodStore\API\Client;
+
+$client = new Client('secret');
+
+$client->getAddon(565)->getVersion(6)->getDownloadToken();
+```
+
+> This endpoint requires the `addons.versions.download` permission
+
+Generate a download token for a specific version of an addon.
+
+`GET https://api.gmodstore.com/addons/<addon_id>/versions/<version_id>/download`
+
+**Route parameters:**
+
+Name | Type | Description
+---- | ---- | -----------
+addon_id   | Integer | The id of the addon the version belongs to
+version_id | Integer | The **id** of the version to download
+
+Response code: `200`<br>
+Response resource: [Addon Download](#resource-types-addon-download)
 
 
 ### Update
