@@ -247,6 +247,9 @@
                     <a href="#resource-types-addon-coupon" class="toc-h2 toc-link" data-title="addon-coupon">Addon Coupon</a>
                   </li>
                   <li>
+                    <a href="#resource-types-addon-download" class="toc-h2 toc-link" data-title="addon-download">Addon Download</a>
+                  </li>
+                  <li>
                     <a href="#resource-types-addon-media" class="toc-h2 toc-link" data-title="addon-media">Addon Media</a>
                   </li>
                   <li>
@@ -276,6 +279,26 @@
               </ul>
           </li>
           <li>
+            <a href="#addons" class="toc-h1 toc-link" data-title="addons">Addons</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#addons-main" class="toc-h2 toc-link" data-title="main">Main</a>
+                  </li>
+                  <li>
+                    <a href="#addons-coupons" class="toc-h2 toc-link" data-title="coupons">Coupons</a>
+                  </li>
+                  <li>
+                    <a href="#addons-purchases" class="toc-h2 toc-link" data-title="purchases">Purchases</a>
+                  </li>
+                  <li>
+                    <a href="#addons-reviews" class="toc-h2 toc-link" data-title="reviews">Reviews</a>
+                  </li>
+                  <li>
+                    <a href="#addons-versions" class="toc-h2 toc-link" data-title="versions">Versions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#teams" class="toc-h1 toc-link" data-title="teams">Teams</a>
               <ul class="toc-list-h2">
                   <li>
@@ -297,26 +320,6 @@
                   </li>
                   <li>
                     <a href="#users-teams" class="toc-h2 toc-link" data-title="teams">Teams</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#addons" class="toc-h1 toc-link" data-title="addons">Addons</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#addons-main" class="toc-h2 toc-link" data-title="main">Main</a>
-                  </li>
-                  <li>
-                    <a href="#addons-coupons" class="toc-h2 toc-link" data-title="coupons">Coupons</a>
-                  </li>
-                  <li>
-                    <a href="#addons-purchases" class="toc-h2 toc-link" data-title="purchases">Purchases</a>
-                  </li>
-                  <li>
-                    <a href="#addons-reviews" class="toc-h2 toc-link" data-title="reviews">Reviews</a>
-                  </li>
-                  <li>
-                    <a href="#addons-versions" class="toc-h2 toc-link" data-title="versions">Versions</a>
                   </li>
               </ul>
           </li>
@@ -622,6 +625,28 @@ In this type of collection <em>all</em> resource properties are maintained and t
 <td>The addon the coupon can be used with</td>
 </tr>
 </tbody></table>
+<h2 id='resource-types-addon-download'>Addon Download</h2>
+<blockquote>
+<p>JSON Schema:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uri"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"url"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The <code>Addon Download</code> resource is used as a container for a url which points to the
+<a href="#">Download Server</a>, when a <code>GET</code> request is sent to the url the download server will serve the addon file.<br></p>
+
+<p><strong>NOTE:</strong> The url is valid for a single use <strong>ONLY</strong>!</p>
 <h2 id='resource-types-addon-media'>Addon Media</h2>
 <blockquote>
 <p>JSON Schema:</p>
@@ -1015,176 +1040,6 @@ In this type of collection <em>all</em> resource properties are maintained and t
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The <code>User</code> resource is used to represent a user on the site.</p>
-<h1 id='teams'>Teams</h1><h2 id='teams-main'>Main</h2><h3 id='teams-main-show'>Show</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/teams/177"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer secret"</span>
-</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
-
-$client = new Client('secret');
-
-$client-&gt;getTeam(177);
-</code></pre>
-<blockquote>
-<p>This endpoint requires the <code>teams.read</code> permission</p>
-</blockquote>
-
-<p>Fetch a single team.</p>
-
-<p><code>GET https://api.gmodstore.com/teams/&lt;id&gt;</code></p>
-
-<p><strong>Route parameters:</strong></p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>integer</td>
-<td>The id of the team to fetch</td>
-</tr>
-</tbody></table>
-
-<p>Response code: <code>200</code><br>
-Response resource: <a href="#resource-types-team">Team</a></p>
-<h2 id='teams-users'>Users</h2><h3 id='teams-users-index'>Index</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/teams/177/users"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer secret"</span>
-</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
-
-$client = new Client('secret');
-
-$client-&gt;getTeam(177)-&gt;getUsers();
-</code></pre>
-<blockquote>
-<p>This endpoint requires the <code>teams.read</code> <strong>AND</strong> <code>users.read</code> permissions</p>
-</blockquote>
-
-<p>Fetch all the users in the given team.</p>
-
-<p><code>GET https://api.gmodstore.com/teams/&lt;id&gt;/users</code></p>
-
-<p><strong>Route parameters:</strong></p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>integer</td>
-<td>The id of the team to fetch</td>
-</tr>
-</tbody></table>
-
-<p>Response code: <code>200</code><br>
-Response resource: <a href="#resource-types-collection">Collection</a>&lt;<a href="#resource-types-team-user">Team User</a>&gt;</p>
-<h1 id='users'>Users</h1><h2 id='users-main'>Main</h2><h3 id='users-main-show'>Show</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/users/76561197988497435"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer secret"</span>
-</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
-
-$client = new Client('secret');
-
-$client-&gt;getUser(76561197988497435);
-</code></pre>
-<blockquote>
-<p>This endpoint requires the <code>users.read</code> permission</p>
-</blockquote>
-
-<p>Fetch a single user.</p>
-
-<p><code>GET https://api.gmodstore.com/users/&lt;id&gt;</code></p>
-
-<p><strong>Route parameters:</strong></p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>integer</td>
-<td>The SteamID64 of the user to fetch</td>
-</tr>
-</tbody></table>
-
-<p>Response code: <code>200</code><br>
-Response resource: <a href="#resource-types-user">User</a></p>
-<h2 id='users-purchases'>Purchases</h2><h3 id='users-purchases-index'>Index</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/users/76561197988497435/purchases"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer secret"</span>
-</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
-
-$client = new Client('secret');
-
-$client-&gt;getUser(76561197988497435)-&gt;getPurchases();
-</code></pre>
-<blockquote>
-<p>This endpoint requires the <code>users.read</code> <strong>AND</strong> <code>addons.purchases.read</code> permissions</p>
-</blockquote>
-
-<p>Fetch all purchases a user has made.</p>
-
-<p><code>GET https://api.gmodstore.com/users/&lt;id&gt;/purchases</code></p>
-
-<p><strong>Route parameters:</strong></p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>Integer</td>
-<td>The SteamID of the user to fetch the purchases of</td>
-</tr>
-</tbody></table>
-
-<p>Response code: <code>200</code><br>
-Response resource: <a href="#resource-types-collection">Collection</a>&lt;<a href="#resource-types-addon-purchase">Addon Purchase</a>&gt;</p>
-<h2 id='users-teams'>Teams</h2><h3 id='users-teams-index'>Index</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/users/76561197988497435/teams"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer secret"</span>
-</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
-
-$client = new Client('secret');
-
-$client-&gt;getUser(76561197988497435)-&gt;getTeams();
-</code></pre>
-<blockquote>
-<p>This endpoint requires the <code>users.read</code> <strong>AND</strong> <code>teams.read</code> permissions</p>
-</blockquote>
-
-<p>Fetch all the teams of a user.</p>
-
-<p><code>GET https://api.gmodstore.com/users/&lt;id&gt;/teams</code></p>
-
-<p><strong>Route parameters:</strong></p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>Integer</td>
-<td>The SteamID of the user to fetch the team of</td>
-</tr>
-</tbody></table>
-
-<p>Response code: <code>200</code><br>
-Response resource: <a href="#resource-types-team">Team</a></p>
 <h1 id='addons'>Addons</h1><h2 id='addons-main'>Main</h2><h3 id='addons-main-index'>Index</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/addons"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer secret"</span>
 </code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
@@ -1883,8 +1738,45 @@ $client-&gt;getAddon(565)-&gt;getVersion(6);
 
 <p>Response code: <code>200</code><br>
 Response resource: <a href="#resource-types-addon-version">Addon Version</a></p>
-<h3 id='addons-versions-download'>Download</h3>
-<p>Coming soon™</p>
+<h3 id='addons-versions-download'>Download</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/addons/565/versions/6/download"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer secret"</span>
+</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
+
+$client = new Client('secret');
+
+$client-&gt;getAddon(565)-&gt;getVersion(6)-&gt;getDownloadToken();
+</code></pre>
+<blockquote>
+<p>This endpoint requires the <code>addons.versions.download</code> permission</p>
+</blockquote>
+
+<p>Generate a download token for a specific version of an addon.</p>
+
+<p><code>GET https://api.gmodstore.com/addons/&lt;addon_id&gt;/versions/&lt;version_id&gt;/download</code></p>
+
+<p><strong>Route parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>addon_id</td>
+<td>Integer</td>
+<td>The id of the addon the version belongs to</td>
+</tr>
+<tr>
+<td>version_id</td>
+<td>Integer</td>
+<td>The <strong>id</strong> of the version to download</td>
+</tr>
+</tbody></table>
+
+<p>Response code: <code>200</code><br>
+Response resource: <a href="#resource-types-addon-download">Addon Download</a></p>
 <h3 id='addons-versions-update'>Update</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.gmodstore.com/addons/565/versions/6"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer secret"</span> <span class="se">\</span>
   -d <span class="s2">"name=Prometheus 1.8&amp;changelog=April fools xD"</span>
@@ -1949,6 +1841,176 @@ $client-&gt;getAddon(565)-&gt;getVersion(6)-&gt;update([
 
 <p>Response code: <code>200</code><br>
 Response resource: <a href="#resource-types-addon-version">Addon Version</a></p>
+<h1 id='teams'>Teams</h1><h2 id='teams-main'>Main</h2><h3 id='teams-main-show'>Show</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/teams/177"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer secret"</span>
+</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
+
+$client = new Client('secret');
+
+$client-&gt;getTeam(177);
+</code></pre>
+<blockquote>
+<p>This endpoint requires the <code>teams.read</code> permission</p>
+</blockquote>
+
+<p>Fetch a single team.</p>
+
+<p><code>GET https://api.gmodstore.com/teams/&lt;id&gt;</code></p>
+
+<p><strong>Route parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The id of the team to fetch</td>
+</tr>
+</tbody></table>
+
+<p>Response code: <code>200</code><br>
+Response resource: <a href="#resource-types-team">Team</a></p>
+<h2 id='teams-users'>Users</h2><h3 id='teams-users-index'>Index</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/teams/177/users"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer secret"</span>
+</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
+
+$client = new Client('secret');
+
+$client-&gt;getTeam(177)-&gt;getUsers();
+</code></pre>
+<blockquote>
+<p>This endpoint requires the <code>teams.read</code> <strong>AND</strong> <code>users.read</code> permissions</p>
+</blockquote>
+
+<p>Fetch all the users in the given team.</p>
+
+<p><code>GET https://api.gmodstore.com/teams/&lt;id&gt;/users</code></p>
+
+<p><strong>Route parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The id of the team to fetch</td>
+</tr>
+</tbody></table>
+
+<p>Response code: <code>200</code><br>
+Response resource: <a href="#resource-types-collection">Collection</a>&lt;<a href="#resource-types-team-user">Team User</a>&gt;</p>
+<h1 id='users'>Users</h1><h2 id='users-main'>Main</h2><h3 id='users-main-show'>Show</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/users/76561197988497435"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer secret"</span>
+</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
+
+$client = new Client('secret');
+
+$client-&gt;getUser(76561197988497435);
+</code></pre>
+<blockquote>
+<p>This endpoint requires the <code>users.read</code> permission</p>
+</blockquote>
+
+<p>Fetch a single user.</p>
+
+<p><code>GET https://api.gmodstore.com/users/&lt;id&gt;</code></p>
+
+<p><strong>Route parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The SteamID64 of the user to fetch</td>
+</tr>
+</tbody></table>
+
+<p>Response code: <code>200</code><br>
+Response resource: <a href="#resource-types-user">User</a></p>
+<h2 id='users-purchases'>Purchases</h2><h3 id='users-purchases-index'>Index</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/users/76561197988497435/purchases"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer secret"</span>
+</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
+
+$client = new Client('secret');
+
+$client-&gt;getUser(76561197988497435)-&gt;getPurchases();
+</code></pre>
+<blockquote>
+<p>This endpoint requires the <code>users.read</code> <strong>AND</strong> <code>addons.purchases.read</code> permissions</p>
+</blockquote>
+
+<p>Fetch all purchases a user has made.</p>
+
+<p><code>GET https://api.gmodstore.com/users/&lt;id&gt;/purchases</code></p>
+
+<p><strong>Route parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>The SteamID of the user to fetch the purchases of</td>
+</tr>
+</tbody></table>
+
+<p>Response code: <code>200</code><br>
+Response resource: <a href="#resource-types-collection">Collection</a>&lt;<a href="#resource-types-addon-purchase">Addon Purchase</a>&gt;</p>
+<h2 id='users-teams'>Teams</h2><h3 id='users-teams-index'>Index</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/users/76561197988497435/teams"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer secret"</span>
+</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
+
+$client = new Client('secret');
+
+$client-&gt;getUser(76561197988497435)-&gt;getTeams();
+</code></pre>
+<blockquote>
+<p>This endpoint requires the <code>users.read</code> <strong>AND</strong> <code>teams.read</code> permissions</p>
+</blockquote>
+
+<p>Fetch all the teams of a user.</p>
+
+<p><code>GET https://api.gmodstore.com/users/&lt;id&gt;/teams</code></p>
+
+<p><strong>Route parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>The SteamID of the user to fetch the team of</td>
+</tr>
+</tbody></table>
+
+<p>Response code: <code>200</code><br>
+Response resource: <a href="#resource-types-team">Team</a></p>
 
       </div>
       <div class="dark-box">
