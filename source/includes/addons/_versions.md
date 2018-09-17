@@ -3,7 +3,7 @@
 ### Index
 
 ```shell
-curl "https://api.gmodstore.com/addons/565/versions" \
+curl "https://api.gmodstore.com/v2/addons/565/versions" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -19,7 +19,7 @@ $client->getAddon(565)->getVersions();
 
 Fetch all the versions of an addon.
 
-`GET https://api.gmodstore.com/addons/<id>/versions`
+`GET https://api.gmodstore.com/v2/addons/<id>/versions`
 
 **Route parameters:**
 
@@ -34,7 +34,7 @@ Response resource: [Collection](#resource-types-collection)<[Addon Coupon](#reso
 ### Store
 
 ```shell
-curl -X POST "https://api.gmodstore.com/addons/565/versions" \
+curl -X POST "https://api.gmodstore.com/v2/addons/565/versions" \
   -H "Authorization: Bearer secret" \
   -F "name=Prometheus 2" \
   -F "changelog=Made it a **lot** better ;)" \
@@ -57,7 +57,7 @@ $client->getAddon(565)->createVersion([
 
 Create a new version for an addon.
 
-`POST https://api.gmodstore.com/addons/<id>/versions`
+`POST https://api.gmodstore.com/v2/addons/<id>/versions`
 
 **Route parameters:**
 
@@ -80,7 +80,7 @@ Response resource: [Addon Version](#resource-types-addon-version)
 ### Show
 
 ```shell
-curl "https://api.gmodstore.com/addons/565/versions/6" \
+curl "https://api.gmodstore.com/v2/addons/565/versions/6" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -96,7 +96,7 @@ $client->getAddon(565)->getVersion(6);
 
 Fetch a specific version of an addon.
 
-`GET https://api.gmodstore.com/addons/<addon_id>/versions/<version_id>`
+`GET https://api.gmodstore.com/v2/addons/<addon_id>/versions/<version_id>`
 
 **Route parameters:**
 
@@ -112,7 +112,7 @@ Response resource: [Addon Version](#resource-types-addon-version)
 ### Download
 
 ```shell
-curl "https://api.gmodstore.com/addons/565/versions/6/download" \
+curl "https://api.gmodstore.com/v2/addons/565/versions/6/download" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -128,7 +128,7 @@ $client->getAddon(565)->getVersion(6)->getDownloadToken();
 
 Generate a download token for a specific version of an addon.
 
-`GET https://api.gmodstore.com/addons/<addon_id>/versions/<version_id>/download`
+`GET https://api.gmodstore.com/v2/addons/<addon_id>/versions/<version_id>/download`
 
 **Route parameters:**
 
@@ -144,7 +144,7 @@ Response resource: [Addon Download](#resource-types-addon-download)
 ### Update
 
 ```shell
-curl -X POST "https://api.gmodstore.com/addons/565/versions/6" \
+curl -X POST "https://api.gmodstore.com/v2/addons/565/versions/6" \
   -H "Authorization: Bearer secret" \
   -d "name=Prometheus 1.8&changelog=April fools xD"
 ```
@@ -164,7 +164,7 @@ $client->getAddon(565)->getVersion(6)->update([
 
 Update a version of an addon.
 
-`POST https://api.gmodstore.com/addons/<addon_idid>/versions/<version_id>`
+`POST https://api.gmodstore.com/v2/addons/<addon_idid>/versions/<version_id>`
 
 **Route parameters:**
 

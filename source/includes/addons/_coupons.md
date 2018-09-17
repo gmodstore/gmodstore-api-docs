@@ -3,7 +3,7 @@
 ### Index
 
 ```shell
-curl "https://api.gmodstore.com/addons/565/coupons" \
+curl "https://api.gmodstore.com/v2/addons/565/coupons" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -19,7 +19,7 @@ $client->getAddon(565)->getCoupons();
 
 Fetch all the coupons for an addon.
 
-`GET https://api.gmodstore.com/addons/<id>/coupons`
+`GET https://api.gmodstore.com/v2/addons/<id>/coupons`
 
 **Route parameters:**
 
@@ -34,7 +34,7 @@ Response resource: [Collection](#resource-types-collection)<[Addon Coupon](#reso
 ### Store
 
 ```shell
-curl -X POST "https://api.gmodstore.com/addons/565/coupons" \
+curl -X POST "https://api.gmodstore.com/v2/addons/565/coupons" \
   -H "Authorization: Bearer secret" \
   -d "percent=25&code=25OFF&max_uses=10&expires_at=25.12.2025"
 ```
@@ -56,7 +56,7 @@ $client->getAddon(565)->createCoupon([
 
 Create an addon coupon.
 
-`POST https://api.gmodstore.com/addons/<id>/coupons`
+`POST https://api.gmodstore.com/v2/addons/<id>/coupons`
 
 **Route parameters:**
 
@@ -80,7 +80,7 @@ Response resource: [Addon Coupon](#resource-types-addon-coupon)
 ### Show
 
 ```shell
-curl "https://api.gmodstore.com/addons/565/coupons/967" \
+curl "https://api.gmodstore.com/v2/addons/565/coupons/967" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -96,7 +96,7 @@ $client->getAddon(565)->getCoupon(967);
 
 Fetch an addon's coupon.
 
-`GET https://api.gmodstore.com/addons/<addon_id>/coupons/<coupon_id>`
+`GET https://api.gmodstore.com/v2/addons/<addon_id>/coupons/<coupon_id>`
 
 **Route parameters:**
 
@@ -112,7 +112,7 @@ Response resource: [Addon Coupon](#resource-types-addon-coupon)
 ### Update
 
 ```shell
-curl -X PUT "https://api.gmodstore.com/addons/565/coupons/967" \
+curl -X PUT "https://api.gmodstore.com/v2/addons/565/coupons/967" \
   -H "Authorization: Bearer secret" \
   -d "percent=75&code=75OFF&max_uses=10&expires_at=25.12.2025"
 ```
@@ -132,7 +132,7 @@ $client->getAddon(565)->getCoupon(967)->update([
 
 Update an addon's coupon.
 
-`PUT https://api.gmodstore.com/addons/<addon_id>/coupons/<coupon_id>`
+`PUT https://api.gmodstore.com/v2/addons/<addon_id>/coupons/<coupon_id>`
 
 **Route parameters:**
 
@@ -157,7 +157,7 @@ Response resource: [Addon Coupon](#resource-types-addon-coupon)
 ### Destroy
 
 ```shell
-curl -X DELETE "https://api.gmodstore.com/addons/565/coupons/967" \
+curl -X DELETE "https://api.gmodstore.com/v2/addons/565/coupons/967" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -173,7 +173,7 @@ $client->getAddon(565)->getCoupon(967)->delete();
 
 Destroy an addon's coupon.
 
-`DELETE https://api.gmodstore.com/addons/<addon_id>/coupons/<coupon_id>`
+`DELETE https://api.gmodstore.com/v2/addons/<addon_id>/coupons/<coupon_id>`
 
 **Route parameters:**
 

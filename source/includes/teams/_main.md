@@ -5,7 +5,7 @@
 ### Show
 
 ```shell
-curl "https://api.gmodstore.com/teams/177" \
+curl "https://api.gmodstore.com/v2/teams/177" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -21,7 +21,7 @@ $client->getTeam(177);
 
 Fetch a single team.
 
-`GET https://api.gmodstore.com/teams/<id>`
+`GET https://api.gmodstore.com/v2/teams/<id>`
 
 **Route parameters:**
 

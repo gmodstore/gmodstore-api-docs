@@ -3,7 +3,7 @@
 ### Index
 
 ```shell
-curl "https://api.gmodstore.com/addons/565/purchases" \
+curl "https://api.gmodstore.com/v2/addons/565/purchases" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -19,7 +19,7 @@ $client->getAddon(565)->getPurchases();
 
 Fetch all purchases of an addon.
 
-`GET https://api.gmodstore.com/addons/<id>/purchases`
+`GET https://api.gmodstore.com/v2/addons/<id>/purchases`
 
 **Route parameters:**
 
@@ -34,7 +34,7 @@ Response resource: [Collection](#resource-types-collection)<[Addon Purchase](#re
 ### Store
 
 ```shell
-curl -X POST "https://api.gmodstore.com/addons/565/purchases" \
+curl -X POST "https://api.gmodstore.com/v2/addons/565/purchases" \
   -H "Authorization: Bearer secret" \
   -d "user_id=76561198127820866"
 ```
@@ -51,7 +51,7 @@ $client->getAddon(565)->addPurchase(76561198127820866);
 
 Create a purchase for an addon.
 
-`POST https://api.gmodstore.com/addons/<id>/purchases`
+`POST https://api.gmodstore.com/v2/addons/<id>/purchases`
 
 **Route parameters:**
 
@@ -73,7 +73,7 @@ Response resource: [Addon Purchase](#resource-types-addon-purchase)
 ### Show
 
 ```shell
-curl "https://api.gmodstore.com/addons/565/purchases/76561198091472117" \
+curl "https://api.gmodstore.com/v2/addons/565/purchases/76561198091472117" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -89,7 +89,7 @@ $client->getAddon(565)->getPurchase(76561198091472117);
 
 Get a purchase of an addon (by user).
 
-`GET https://api.gmodstore.com/addons/<addon_id>/purchases/<user_id>`
+`GET https://api.gmodstore.com/v2/addons/<addon_id>/purchases/<user_id>`
 
 **Route parameters:**
 
@@ -105,7 +105,7 @@ Response resource: [Addon Purchase](#resource-types-addon-purchase)
 ### Update
 
 ```shell
-curl -X POST "https://api.gmodstore.com/addons/565/purchases/76561198091472117" \
+curl -X POST "https://api.gmodstore.com/v2/addons/565/purchases/76561198091472117" \
   -H "Authorization: Bearer secret" \
   -d "revoked=1"
 ```
@@ -124,7 +124,7 @@ $client->getAddon(565)->getPurchase(76561198127820866)->update([
 
 Create a purchase for an addon.
 
-`POST https://api.gmodstore.com/addons/<id>/purchases`
+`POST https://api.gmodstore.com/v2/addons/<id>/purchases`
 
 **Route parameters:**
 

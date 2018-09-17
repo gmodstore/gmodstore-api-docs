@@ -3,7 +3,7 @@
 ### Index
 
 ```shell
-curl "https://api.gmodstore.com/users/76561197988497435/purchases" \
+curl "https://api.gmodstore.com/v2/users/76561197988497435/purchases" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -19,7 +19,7 @@ $client->getUser(76561197988497435)->getPurchases();
 
 Fetch all purchases a user has made.
 
-`GET https://api.gmodstore.com/users/<id>/purchases`
+`GET https://api.gmodstore.com/v2/users/<id>/purchases`
 
 **Route parameters:**
 

@@ -5,7 +5,7 @@
 ### Show
 
 ```shell
-curl "https://api.gmodstore.com/users/76561197988497435" \
+curl "https://api.gmodstore.com/v2/users/76561197988497435" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -21,7 +21,7 @@ $client->getUser(76561197988497435);
 
 Fetch a single user.
 
-`GET https://api.gmodstore.com/users/<id>`
+`GET https://api.gmodstore.com/v2/users/<id>`
 
 **Route parameters:**
 

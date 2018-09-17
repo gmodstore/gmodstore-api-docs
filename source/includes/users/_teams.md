@@ -3,7 +3,7 @@
 ### Index
 
 ```shell
-curl "https://api.gmodstore.com/users/76561197988497435/teams" \
+curl "https://api.gmodstore.com/v2/users/76561197988497435/teams" \
   -H "Authorization: Bearer secret"
 ```
 
@@ -19,7 +19,7 @@ $client->getUser(76561197988497435)->getTeams();
 
 Fetch all the teams of a user.
 
-`GET https://api.gmodstore.com/users/<id>/teams`
+`GET https://api.gmodstore.com/v2/users/<id>/teams`
 
 **Route parameters:**
 
