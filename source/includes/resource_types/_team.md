@@ -37,4 +37,4 @@ The `Team` resource is used to represent a team.
 ### Relations
 Name | Type | Description
 ---- | ---- | -----------
-primary_author | [Team User](#resource-types-team-user) | The primary owner of the team
+primaryAuthor | [Team User](#resource-types-team-user) | The primary owner of the team

@@ -28,7 +28,7 @@ Name | Type | Description
 id | Integer | The id of the addon to fetch the versions of
 
 Response code: `200`<br>
-Response resource: [Collection](#resource-types-collection)<[Addon Coupon](#resource-types-addon-coupon)>
+Response resource: [Collection](#resource-types-collection)<[Addon Version](#resource-types-addon-version)>
 
 
 ### Store
