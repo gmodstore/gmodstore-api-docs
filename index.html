@@ -923,7 +923,7 @@ In this type of collection <em>all</em> resource properties are maintained and t
 </tr>
 </thead><tbody>
 <tr>
-<td>primary_author</td>
+<td>primaryAuthor</td>
 <td><a href="#resource-types-team-user">Team User</a></td>
 <td>The primary owner of the team</td>
 </tr>
@@ -1631,7 +1631,7 @@ $client-&gt;getAddon(565)-&gt;getVersions();
 </tbody></table>
 
 <p>Response code: <code>200</code><br>
-Response resource: <a href="#resource-types-collection">Collection</a>&lt;<a href="#resource-types-addon-coupon">Addon Coupon</a>&gt;</p>
+Response resource: <a href="#resource-types-collection">Collection</a>&lt;<a href="#resource-types-addon-version">Addon Version</a>&gt;</p>
 <h3 id='addons-versions-store'>Store</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.gmodstore.com/v2/addons/565/versions"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer secret"</span> <span class="se">\</span>
   -F <span class="s2">"name=Prometheus 2"</span> <span class="se">\</span>
