@@ -20,13 +20,17 @@
     },
     "country_code": {
       "type": "string"
+    },
+    "slug": {
+      "type": "string"
     }
   },
   "required": [
     "id",
     "name",
     "avatar",
-    "country_code"
+    "country_code",
+    "slug"
   ]
 }
 ```
