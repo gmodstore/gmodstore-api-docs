@@ -41,6 +41,7 @@ includes:
   - teams/users
   
   - users/main
+  - users/addons
   - users/purchases
   - users/teams
 
