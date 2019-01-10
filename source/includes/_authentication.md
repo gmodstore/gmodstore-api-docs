@@ -16,7 +16,7 @@ $client = new Client('secret');
 
 > Make sure to replace `secret` with your API key.
 
-The Gmodstore provides to methods of authentication: bearer token and query parameter.
+The Gmodstore provides two methods of authentication: bearer token and query parameter.
 Whilst the former is preferred, you may still wish to use the latter, 
-to do do so simply pass a query variable named `api_key` containing your API key.
-If you wish to use a former simply set the `Authorization` header to `Bearer <api_key>` where `<api_key>` is your API key.
+to do so simply pass a query variable named `api_key` containing your API key.
+If you wish to use the former simply set the `Authorization` header to `Bearer <api_key>` where `<api_key>` is your API key.
