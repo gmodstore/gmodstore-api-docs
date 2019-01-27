@@ -276,6 +276,9 @@
                   <li>
                     <a href="#resource-types-user" class="toc-h2 toc-link" data-title="user">User</a>
                   </li>
+                  <li>
+                    <a href="#resource-types-ban" class="toc-h2 toc-link" data-title="ban">Ban</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -324,6 +327,9 @@
                   <li>
                     <a href="#users-teams" class="toc-h2 toc-link" data-title="teams">Teams</a>
                   </li>
+                  <li>
+                    <a href="#users-bans" class="toc-h2 toc-link" data-title="bans">Bans</a>
+                  </li>
               </ul>
           </li>
       </div>
@@ -356,15 +362,21 @@ $client = new Client('secret');
 <p>Make sure to replace <code>secret</code> with your API key.</p>
 </blockquote>
 
-<p>The Gmodstore provides two methods of authentication: bearer token and query parameter.
-Whilst the former is preferred, you may still wish to use the latter, 
-to do so simply pass a query variable named <code>api_key</code> containing your API key.
-If you wish to use the former simply set the <code>Authorization</code> header to <code>Bearer &lt;api_key&gt;</code> where <code>&lt;api_key&gt;</code> is your API key.</p>
+<p>The Gmodstore provides two methods of authentication: bearer token and query parameter.</p>
+
+<p>The preferred method is using the bearer token.
+To do so simply set the <code>Authorization</code> header to <code>Bearer &lt;api_key&gt;</code> where <code>&lt;api_key&gt;</code> is your API key.</p>
+
+<p>If you for some reason wish to use the API with the old way simply pass a query variable named <code>api_key</code> containing your API key.</p>
+
+<aside class="notice">
+We recommend that you use the bearer token to authenticate.
+</aside>
 <h1 id='authorization'>Authorization</h1>
 <p>For authorization Gmodstore uses a variety of permissions which you can assign to your api keys individually.
-An up-to-date list of these permissions is available on your Gmodstore dasboard.</p>
+An up-to-date list of these permissions is available when editing an API key in your settings. The API Key section can be found <a href="https://www.gmodstore.com/settings/apikeys">here</a></p>
 <h1 id='rate-limits'>Rate Limits</h1>
-<p>Every request you make to the Gmodstore API will count against your rate limit which, as of the time of writing, is 60 requests / minute.<br>
+<p>Every request you make to the Gmodstore API will count against your rate limit, which at the time of writing this, is 60 requests / minute.<br>
 An up-to-date value will always provided in the <code>X-RateLimit-Limit</code> header.<br>
 The number of requests you have remaining before you must wait is provided in the <code>x-RateLimit-Remaining</code> header.</p>
 <h1 id='error-codes'>Error Codes</h1>
@@ -427,10 +439,16 @@ The number of requests you have remaining before you must wait is provided in th
 <p>Some resources have an &quot;Relations&quot; section, these relations can be retrieved by using the <code>with</code> query parameter;
 for example, to retrieve the <code>user</code> relation one could append <code>?with=user</code> to the resources URL, this is done to save bandwidth.
 To retrieve multiple relations simply pass a comma delimited list of names, e.g <code>?with=user,transaction</code> would retrieve 
-both the <code>user</code> and <code>transaction</code> relationships of the given resource (provided it had those relations).
-The relations will be appended to the resource with a key matching matching their name(s).</p>
+both the <code>user</code> and <code>transaction</code> relationships of the given resource (provided it had those relations). </p>
+
+<p>The relations will be appended to the resource with a key matching matching their name(s).</p>
 
 <p>Finally you should be aware that all JSON Schemas are represented as JSON Schema.</p>
+
+<aside class="notice">
+One thing to note is that you are not able to return relations that have multiple items, 
+for instance you will not be able to return all purchases of an addon through the addon's show API.
+</aside>
 <h2 id='resource-types-collection'>Collection</h2>
 <blockquote>
 <p>JSON Schema:</p>
@@ -463,7 +481,7 @@ In this type of collection <em>all</em> resource properties are maintained and t
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="p">},</span><span class="w"> 
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -520,6 +538,12 @@ In this type of collection <em>all</em> resource properties are maintained and t
         </span><span class="s2">"listing_small"</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">  
+    </span><span class="s2">"route"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">  
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-time"</span><span class="w">
@@ -538,6 +562,8 @@ In this type of collection <em>all</em> resource properties are maintained and t
     </span><span class="s2">"requirements"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"price"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"images"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"slug"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"route"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"updated_at"</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -1035,18 +1061,100 @@ In this type of collection <em>all</em> resource properties are maintained and t
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">},</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"ban_properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"everything"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"addon.create"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"addon.purchase"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"addon.download"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"addon.review"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"addon.comment"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"job.create"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"job.apply"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"job.review"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"job.comment"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ban.appeal"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
   </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"avatar"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"country_code"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"slug"</span><span class="w">
+    </span><span class="s2">"slug"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ban_properties"</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The <code>User</code> resource is used to represent a user on the site.</p>
+<h3 id='resource-types-user-relations'>Relations</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>group</td>
+<td><a href="#resource-types-permission-group">Permission Group</a></td>
+<td>The permission group associated with this user</td>
+</tr>
+</tbody></table>
+<h2 id='resource-types-ban'>Ban</h2>
+<blockquote>
+<p>JSON Schema:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"unban_reason"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"everything"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"addon.create"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"addon.purchase"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"addon.download"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"addon.review"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"addon.comment"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"job.create"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"job.apply"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"job.review"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"job.comment"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ban.appeal"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-time"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date-time"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reason"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unban_reason"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"properties"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"start"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"end"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The <code>Ban</code> resource is used to represent a user ban on the site.</p>
 <h1 id='addons'>Addons</h1><h2 id='addons-main'>Main</h2><h3 id='addons-main-index'>Index</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/v2/addons"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer secret"</span>
 </code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
@@ -2052,6 +2160,40 @@ $client-&gt;getUser(76561197988497435)-&gt;getTeams();
 
 <p>Response code: <code>200</code><br>
 Response resource: <a href="#resource-types-team">Team</a></p>
+<h2 id='users-bans'>Bans</h2><h3 id='users-bans-index'>Index</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/v2/users/76561197988497435/bans"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer secret"</span>
+</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
+
+$client = new Client('secret');
+
+$client-&gt;getUser(76561197988497435)-&gt;getBans();
+</code></pre>
+<blockquote>
+<p>This endpoint requires the <code>users.read</code> permission</p>
+</blockquote>
+
+<p>Fetch all active bans associated with this user.</p>
+
+<p><code>GET https://api.gmodstore.com/v2/users/&lt;id&gt;/bans</code></p>
+
+<p><strong>Route parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>The SteamID of the user to fetch the bans of</td>
+</tr>
+</tbody></table>
+
+<p>Response code: <code>200</code><br>
+Response resource: <a href="#resource-types-collection">Collection</a>&lt;<a href="#resource-types-ban">Ban</a>&gt;</p>
 
       </div>
       <div class="dark-box">
