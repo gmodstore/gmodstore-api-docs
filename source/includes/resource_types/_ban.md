@@ -1,4 +1,4 @@
-## User
+## Ban
 
 > JSON Schema:
 
@@ -7,24 +7,16 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
   "properties": {
-    "id": {
-      "type": "integer",
-      "minimum": 1
-    },
-    "name": {
+    "user_id": {
       "type": "string"
     },
-    "avatar": {
-      "type": "string",
-      "format": "uri"
-    },
-    "country_code": {
+    "reason": {
       "type": "string"
     },
-    "slug": {
+    "unban_reason": {
       "type": "string"
     },
-    "ban_properties": {
+    "properties": {
       "type": "array",
       "items": [
         "everything",
@@ -40,19 +32,24 @@
         "ban.appeal"
       ]
     },
+    "start": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "end": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
   "required": [
-    "id",
-    "name",
-    "avatar",
-    "slug",
-    "ban_properties"
+    "user_id",
+    "reason",
+    "unban_reason",
+    "properties",
+    "start",
+    "end"
   ]
 }
 ```
 
-The `User` resource is used to represent a user on the site.
-
-### Relations
-Name | Type | Description
----- | ---- | -----------
-group | [Permission Group](#resource-types-permission-group) | The permission group associated with this user
+The `Ban` resource is used to represent a user ban on the site.

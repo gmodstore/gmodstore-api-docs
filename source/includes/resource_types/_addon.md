@@ -13,7 +13,7 @@
     },
     "active": {
       "type": "boolean"
-    },
+    }, 
     "name": {
       "type": "string"
     },
@@ -70,6 +70,12 @@
         "listing_small"
       ]
     },
+    "slug": {
+      "type": "string"
+    },  
+    "route": {
+      "type": "string"
+    },  
     "created_at": {
       "type": "string",
       "format": "date-time"
@@ -88,6 +94,8 @@
     "requirements",
     "price",
     "images",
+    "slug",
+    "route",
     "created_at",
     "updated_at"
   ]

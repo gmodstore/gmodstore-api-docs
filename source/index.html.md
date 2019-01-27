@@ -30,6 +30,7 @@ includes:
   - resource_types/team_user
   - resource_types/transaction
   - resource_types/user
+  - resource_types/ban
   
   - addons/main
   - addons/coupons
@@ -44,6 +45,7 @@ includes:
   - users/addons
   - users/purchases
   - users/teams
+  - users/bans
 
 search: true
 ---
