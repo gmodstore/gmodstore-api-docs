@@ -24,6 +24,15 @@
       "type": "integer",
       "minimum": 0
     },
+    "release_type": {
+      "type": "string",
+      "enum": [
+        "stable",
+        "beta",
+        "alpha",
+        "private"
+      ]
+    },
     "created_at": {
       "type": "string",
        "format": "date-time"

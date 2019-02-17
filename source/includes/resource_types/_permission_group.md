@@ -13,11 +13,16 @@
     },
     "title": {
       "type": "string"
+    },
+    "display_order": {
+      "type": "integer",
+      "minimum": 0
     }
   },
   "required": [
     "id",
-    "title"
+    "title",
+    "display_order"
   ]
 }
 ```
