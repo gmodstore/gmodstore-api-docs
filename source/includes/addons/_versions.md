@@ -164,7 +164,7 @@ $client->getAddon(565)->getVersion(6)->update([
 
 Update a version of an addon.
 
-`POST https://api.gmodstore.com/v2/addons/<addon_idid>/versions/<version_id>`
+`POST https://api.gmodstore.com/v2/addons/<addon_id>/versions/<version_id>`
 
 **Route parameters:**
 
