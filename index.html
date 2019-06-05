@@ -279,6 +279,9 @@
                   <li>
                     <a href="#resource-types-ban" class="toc-h2 toc-link" data-title="ban">Ban</a>
                   </li>
+                  <li>
+                    <a href="#resource-types-user-badge-legend" class="toc-h2 toc-link" data-title="user-badge-legend">User Badge Legend</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -329,6 +332,9 @@
                   </li>
                   <li>
                     <a href="#users-bans" class="toc-h2 toc-link" data-title="bans">Bans</a>
+                  </li>
+                  <li>
+                    <a href="#users-badges" class="toc-h2 toc-link" data-title="badges">Badges</a>
                   </li>
               </ul>
           </li>
@@ -1177,6 +1183,35 @@ In this type of collection <em>all</em> resource properties are maintained and t
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The <code>Ban</code> resource is used to represent a user ban on the site.</p>
+<h2 id='resource-types-user-badge-legend'>User Badge Legend</h2>
+<blockquote>
+<p>JSON Schema:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://json-schema.org/draft-07/schema"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"ext"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The <code>User Badge Legend</code> resource is used to represent a the parent of a User Badge, which also contains far more info than a User Badge.</p>
 <h1 id='addons'>Addons</h1><h2 id='addons-main'>Main</h2><h3 id='addons-main-index'>Index</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/v2/addons"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer secret"</span>
 </code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
@@ -1441,7 +1476,7 @@ $client-&gt;getAddon(565)-&gt;getCoupon(967)-&gt;update([
 <tr>
 <td>expires_at</td>
 <td>Date (d.m.Y)</td>
-<td>The expiry date (<code>null</code> for infinite)</td>
+<td>The expiry date (can not be more than two weeks into the future)</td>
 </tr>
 </tbody></table>
 
@@ -2216,6 +2251,139 @@ $client-&gt;getUser(76561197988497435)-&gt;getBans();
 
 <p>Response code: <code>200</code><br>
 Response resource: <a href="#resource-types-collection">Collection</a>&lt;<a href="#resource-types-ban">Ban</a>&gt;</p>
+<h2 id='users-badges'>Badges</h2><h3 id='users-badges-index'>Index</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.gmodstore.com/v2/users/76561197988497435/badges"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer secret"</span>
+</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
+
+$client = new Client('secret');
+
+$client-&gt;getUser(76561197988497435)-&gt;getBadges();
+</code></pre>
+<blockquote>
+<p>This endpoint requires the <code>users.read</code> permission</p>
+</blockquote>
+
+<p>Fetch all the badges a user has.</p>
+
+<p><code>GET https://api.gmodstore.com/v2/users/&lt;id&gt;/badges</code></p>
+
+<p><strong>Route parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>The SteamID of the user to fetch the badges of</td>
+</tr>
+</tbody></table>
+
+<p>Response code: <code>200</code><br>
+Response resource: <a href="#resource-types-collection">Collection</a>&lt;<a href="#resource-types-user-badge-legend">UserBadgeLegend</a>&gt;</p>
+<h3 id='users-badges-store'>Store</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.gmodstore.com/v2/users/76561197988497435/badges"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer secret"</span> <span class="se">\</span>
+  -d <span class="s2">"badge=discord-booster"</span>
+</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
+
+$client = new Client('secret');
+
+$client-&gt;getUser(76561197988497435)-&gt;giveBadge([
+  'badge' =&gt; 'discord-booster',
+]);
+</code></pre>
+<blockquote>
+<p>This endpoint requires the <code>users.write</code> permission as well as the user permission to give a badge</p>
+</blockquote>
+
+<p>Give a user a badge.</p>
+
+<aside class="warning">
+This endpoint is only available to users who have the `give_badge` permission
+</aside>
+
+<p><code>POST https://api.gmodstore.com/v2/users/&lt;id&gt;/badges</code></p>
+
+<p><strong>Route parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>The SteamID of the user to give the badge to</td>
+</tr>
+</tbody></table>
+
+<p><strong>Form fields:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>badge</td>
+<td>String</td>
+<td>The id of the User Badge Legend to give</td>
+</tr>
+</tbody></table>
+
+<p>Response code: <code>201</code><br>
+Response resource: <a href="#resource-types-user-badge-legend">User Badge Legend</a></p>
+<h3 id='users-badges-destroy'>Destroy</h3><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="s2">"https://api.gmodstore.com/v2/users/76561197988497435/badges/discord-booster"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer secret"</span>
+</code></pre><pre class="highlight php tab-php"><code>use GmodStore\API\Client;
+
+$client = new Client('secret');
+
+$client-&gt;getUser(76561197988497435)-&gt;getBadge('discord-booster')-&gt;delete();
+</code></pre>
+<blockquote>
+<p>This endpoint requires the <code>users.write</code> permission as well as the user permission to take a badge</p>
+</blockquote>
+
+<p>Destroy a users&#39;s badge.</p>
+
+<aside class="warning">
+This endpoint is only available to users who have the `take_badge` permission
+</aside>
+
+<p><code>DELETE https://api.gmodstore.com/v2/users/&lt;user_id&gt;/badges/badge_id&gt;</code></p>
+
+<p><strong>Route parameters:</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>The SteamID of the user the badge belongs to</td>
+</tr>
+<tr>
+<td>badge_id</td>
+<td>String</td>
+<td>The id of the User Badge Legend to take</td>
+</tr>
+</tbody></table>
+
+<p>Response code: <code>204</code></p>
 
       </div>
       <div class="dark-box">
