@@ -148,7 +148,7 @@ Name | Type | Description
 percent    | Integer      | The percentage discount
 code       | String       | The code for the coupon
 max_uses   | Integer      | The maximum number of uses for
-expires_at | Date (d.m.Y) | The expiry date (`null` for infinite)
+expires_at | Date (d.m.Y) | The expiry date (can not be more than two weeks into the future)
 
 Response code: `200`<br>
 Response resource: [Addon Coupon](#resource-types-addon-coupon)
