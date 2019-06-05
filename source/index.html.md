@@ -31,6 +31,7 @@ includes:
   - resource_types/transaction
   - resource_types/user
   - resource_types/ban
+  - resource_types/user_badge_legend
   
   - addons/main
   - addons/coupons
@@ -46,6 +47,7 @@ includes:
   - users/purchases
   - users/teams
   - users/bans
+  - users/badges
 
 search: true
 ---
