@@ -21,4 +21,4 @@
 The `Addon Download` resource is used as a container for a url which points to the
 [Download Server](#), when a `GET` request is sent to the url the download server will serve the addon file.<br>
 
-**NOTE:** The url is valid for 24 hours **ONLY**!
+**NOTE:** The url is valid for a single use within 24 hours **ONLY**!
